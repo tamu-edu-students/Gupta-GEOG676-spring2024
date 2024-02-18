@@ -10,7 +10,8 @@ arcpy.CreateFileGDB_management(folder_path, "Test.gdb")
 
 #Read in garage location X/Y coords from the provided CSV file.
 garages_layer_name = "Garages"
-garages = arcpy.management.MakeXYEventLayer("C:\\tmp\ArcGISPython\garages.csv", "x", "y", garages_layer_name)
+csv_path = "C:\\tmp\ArcGISPython\garages.csv"
+garages = arcpy.management.MakeXYEventLayer(csv_path, "x", "y", garages_layer_name)
 
 #add in the input layers
 arcpy.FeatureClassToGeodatabase_conversion(garages, gdb_path)
